@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import Header from '../../shared/Header/Header';
 import { useDispatch, useSelector } from 'react-redux';
 import { handleAddAction, resetState } from '../../../../redux/AdminDataSlice';
-import socket from '../../../../util/Socket'
 
 const DataList = () => {
   const [onlyFileData, setOnlyFileData] = useState([]);
@@ -192,15 +191,6 @@ const DataList = () => {
   
   //--------------------Action Loader-------------------------------
   
-  
-  //--------------------Socket-------------------------------
-  
-  // useEffect(()=>{
-  //   socket.emit('addAction', ({  }))
-  // }, [socket, dispatch])
-  
-  //--------------------Socket-------------------------------
-
   return (
     <>
       <Header />
