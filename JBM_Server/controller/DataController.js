@@ -51,12 +51,22 @@ if (!fs.existsSync(uploadDir)) {
 }
 
 // Multer configuration for file storage
-const storage = multerS3({
-  s3: s3,
-  bucket: 'jmb-enterprise-bucket',
-  acl: 'public-read',
-  key: (req, file, cb) => {
-    // Generate a unique name for the file
+// const storage = multerS3({
+//   s3: s3,
+//   bucket: 'jmb-enterprise-bucket',
+//   acl: 'public-read',
+//   key: (req, file, cb) => {
+//     // Generate a unique name for the file
+//     const fileName = `${uuidv4()}${path.extname(file.originalname)}`;
+//     cb(null, fileName);
+//   }
+// });
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, uploadDir); 
+  },
+  filename: (req, file, cb) => {
     const fileName = `${uuidv4()}${path.extname(file.originalname)}`;
     cb(null, fileName);
   }
