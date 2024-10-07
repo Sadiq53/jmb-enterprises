@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "JMB-Application",
+    "slug": "JMB-Application",
+    "version": "1.0.0",
+    "extra": {
+      "eas": {
+        "projectId": "97b66e8b-1a32-476f-8b96-624b18686b22"
+      }
+    }
+  }
+}
